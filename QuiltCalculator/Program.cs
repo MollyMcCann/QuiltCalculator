@@ -32,7 +32,7 @@ namespace QuiltCalculator
                 case "1":
                     SquareCount();
                     return true;
-                case "2":
+                case "2": 
                     MeasureConvert();
                     return true;
                 case "3":
