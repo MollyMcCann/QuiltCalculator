@@ -46,6 +46,7 @@ namespace QuiltCalculator
         private static void SquareCount()
         {
             Console.Clear();
+
             Console.WriteLine("how many squares ...");
         }
         private static void MeasureConvert()
