@@ -10,14 +10,21 @@ namespace QuiltCalculator
             Console.WriteLine("Welcome to the Quilt Calculator.\n");
             Console.ReadKey();
 
-            bool showMenu = true;
-            while (showMenu)
+            int userInput = 0;
+            do
             {
-                showMenu = MainMenu();
-            }
-            
+                userInput = MainMenu();
+            } while (userInput != 5);
+
+            //bool showMenu = true;
+            //while (showMenu)
+            //{
+            //    showMenu = MainMenu();
+            //}
+            //Let's try something else
+
         }
-        private static bool MainMenu()
+       static public int MainMenu()
         {
          
             Console.WriteLine("What would you like to do?");
@@ -26,21 +33,26 @@ namespace QuiltCalculator
             Console.WriteLine("2) Fabric Measurement Convertor");
             Console.WriteLine("3) Exit");
             Console.Write("\r\nSelect an option: ");
-            
-            switch (Console.ReadLine())
-            {
-                case "1":
-                    SquareCount();
-                    return true;
-                case "2": 
-                    MeasureConvert();
-                    return true;
-                case "3":
-                    return false;
-                default:
-                    return true;
-            }
-         
+            var result = Console.ReadLine();
+            return Convert.ToInt32(result);
+
+
+            //switch (Console.ReadLine())
+            //{
+            //    case "1":
+            //        SquareCount();
+            //        return true;
+            //    case "2": 
+            //        MeasureConvert();
+            //        return true;
+            //    case "3":
+            //        return false;
+            //    default:
+            //        return true;
+            //}
+
+           
+
         }
 
         private static void SquareCount()
@@ -51,8 +63,10 @@ namespace QuiltCalculator
         }
         private static void MeasureConvert()
         {
-            Console.Clear();
+            
             Console.WriteLine("lets convert a measurement");
+
         }
     }
 }
+// issue is the bool, something about this is going to make i so we wretun to the main menu each time it is called
