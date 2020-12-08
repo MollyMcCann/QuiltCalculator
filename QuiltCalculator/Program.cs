@@ -5,7 +5,8 @@ namespace QuiltCalculator
 {
     class Program
     {
-
+        public const string Yd = "yd"; //User options as constants
+        public const string M = "m";
         static void Main(string[] args)
         {
 
@@ -68,6 +69,8 @@ namespace QuiltCalculator
                 ConvertUserInput(userInput);
             }
 
+            Console.ReadLine();
+
             static string GetUserInput()
             {
                 Console.Write("Enter either yd or m:");
@@ -81,16 +84,29 @@ namespace QuiltCalculator
                 if (!IsValidUserInput(userInput))
                     throw new ArgumentException("Input value is not yd or m");
 
-                if (ConvertFromYardstoMeters(userInput)) // where the error occurs
+                if (userInput == "yd")
                 {
-                    var Y = new ConvertNumber();
-                    Y.ConvertM();
+                    ConvertYD();
+                }
+                else if (userInput == "m")
+                {
+                    ConvertM();
                 }
                 else
                 {
-                    var l = new ConvertNumber();
-                    l.ConvertYD();
+                    Console.WriteLine("Your input was neither lb nor kg");
                 }
+
+                //if (ConvertFromYardstoMeters(userInput)) // where the error occurs
+                //{
+                //    var y = new ConvertNumber();
+                //    y.ConvertM();
+                //}
+                //else
+                //{
+                //    var l = new ConvertNumber();
+                //    l.ConvertYD();
+                //}
             }
 
             static bool IsValidUserInput(string userInput)
@@ -107,30 +123,39 @@ namespace QuiltCalculator
             {
                 return userInput == M;
             }
+            static void ConvertYD()
+            {
+                //changes for yards
+
+                Console.Write("Enter a the amount of Yards you need to convert to Meters:");
+                double yards = Convert.ToDouble(Console.ReadLine());
+                
+                //set up exception handling here
 
 
-            Console.ReadLine();
+                double meters = yards/ 0.9144;
+                Console.WriteLine(yards + " yards is" + meters+ " Meters " );
+
+
+            }
+            static void ConvertM()
+            {
+
+                //changes for meters
+                Console.Write("Enter the amount of Meters you need to convert to Yards: n/");
+                double meters = Convert.ToDouble(Console.ReadLine());
+
+                double yards = meters * 1.09361;
+                Console.WriteLine( yards + " Yards is " + meters + " Meters ");
+
+
+
+                Console.ReadLine(); 
+            }
         }
 
-        //string answer = "";
-        //Console.ReadLine();
-        //if (answer == "yards" ||answer == "Yards" )
-        //{
-        //    answer.ToString();
-        //    Console.WriteLine("how many yards do you have?");
+       
 
-        //}
-        //Console.ReadLine();                
-        //if (answer == "meters" || answer == "Meters")
-        //{
-        //    Console.WriteLine("how many Meters do you have?");
-        //    Console.ReadKey();
-        //}
-        //else
-        //{
-        //    Console.WriteLine("only enter Yards or meters");
-        //    Console.ReadLine();
-        //}
 
 
 
@@ -146,10 +171,13 @@ namespace QuiltCalculator
             decimal area = lengthSide * widthSide;
             Console.WriteLine("The area of your quilt is: {0}", area);
             Console.ReadLine();
-            //i must find out how to do the calculation for the amount of squares
+            //i must find out how to do the calculation for the amount of square
+
+            // now we have only have the area 
         }
 
     }
 
- }
+      
+    }
 
