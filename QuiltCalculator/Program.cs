@@ -130,12 +130,14 @@ namespace QuiltCalculator
                 Console.Write("Enter a the amount of Yards you need to convert to Meters:");
                 double yards = Convert.ToDouble(Console.ReadLine());
                 
-                //set up exception handling here
+                //set up exception handling here... talk to jonathan
+
+
 
 
                 double meters = yards/ 0.9144;
-                Console.WriteLine(yards + " yards is" + meters+ " Meters " );
-
+                Console.WriteLine(yards + " yards is" + meters + " Meters " );
+                 
 
             }
             static void ConvertM()
@@ -165,13 +167,19 @@ namespace QuiltCalculator
             Console.WriteLine(" Lets calculate how many squares");
             Console.WriteLine("What is the desired length of you quilt? ");
             decimal lengthSide = decimal.Parse(Console.ReadLine());
-            Console.Write("what is the desires width the width of your quilt: ");
+            Console.Write("what is the desired width the width of your quilt: ");
             decimal widthSide = decimal.Parse(Console.ReadLine());
 
             decimal area = lengthSide * widthSide;
             Console.WriteLine("The area of your quilt is: {0}", area);
+            Console.WriteLine("what is the finished measurement of your squares? ");
+            decimal squareSide1 = decimal.Parse(Console.ReadLine());
+            decimal squareSide2 = decimal.Parse(Console.ReadLine());
+            decimal amountofSquares = (squareSide1 * squareSide2)/ area;
+            Console.WriteLine(" the amount of squares you need is: {0}", amountofSquares);
+
             Console.ReadLine();
-            //i must find out how to do the calculation for the amount of square
+            //this math seems wrong. something happens with the division and clean code
 
             // now we have only have the area 
         }
