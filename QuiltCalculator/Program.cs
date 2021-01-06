@@ -165,23 +165,20 @@ namespace QuiltCalculator
         {
             Console.Clear();
             Console.WriteLine(" Lets calculate how many squares");
-            Console.WriteLine("What is the desired length of you quilt? ");
+            Console.WriteLine("What is the desired length of you quilt in inches? ");
             decimal lengthSide = decimal.Parse(Console.ReadLine());
-            Console.Write("what is the desired width the width of your quilt: ");
+            Console.Write("what is the desired width the width of your quilt in inches: ");
             decimal widthSide = decimal.Parse(Console.ReadLine());
 
             decimal area = lengthSide * widthSide;
             Console.WriteLine("The area of your quilt is: {0}", area);
-            Console.WriteLine("what is the finished measurement of your squares? ");
-            decimal squareSide1 = decimal.Parse(Console.ReadLine());
-            decimal squareSide2 = decimal.Parse(Console.ReadLine());
+            Console.WriteLine("What are the finished demensions of your squares in inches? ");
+            decimal squareSide1 = decimal.Parse(Console.ReadLine());  decimal squareSide2 = decimal.Parse(Console.ReadLine());
             decimal amountofSquares = area/(squareSide1 * squareSide2);
             Console.WriteLine(" the amount of squares you need is: {0}", amountofSquares);
 
             Console.ReadLine();
-            //this math seems wrong. something happens with the division and clean code
-
-            // now we have only have the area 
+          
         }
 
     }
