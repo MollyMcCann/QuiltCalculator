@@ -175,7 +175,7 @@ namespace QuiltCalculator
             Console.WriteLine("what is the finished measurement of your squares? ");
             decimal squareSide1 = decimal.Parse(Console.ReadLine());
             decimal squareSide2 = decimal.Parse(Console.ReadLine());
-            decimal amountofSquares = (squareSide1 * squareSide2)/ area;
+            decimal amountofSquares = area/(squareSide1 * squareSide2);
             Console.WriteLine(" the amount of squares you need is: {0}", amountofSquares);
 
             Console.ReadLine();
