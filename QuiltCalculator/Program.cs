@@ -10,7 +10,7 @@ namespace QuiltCalculator
         static void Main(string[] args)
         {
 
-            Console.WriteLine("Welcome to the Quilt Calculator.\n");
+            Console.WriteLine("Welcome to the Quilt Calculator! Press enter to proceed.\n");
             Console.ReadKey();
 
             bool userInput = true;
@@ -48,12 +48,16 @@ namespace QuiltCalculator
                 default:
                     return true;
             }
+         
+
         }
 
+       
+       
         private static void FabricMeasurement()
         {
             Console.Clear();
-           Console.Write("Yards or Meters?  ");
+           Console.Write("Yards or Meters?  "); // request the input from the user
 
 
             string userInput = GetUserInput();
@@ -70,10 +74,10 @@ namespace QuiltCalculator
             }
 
             Console.ReadLine();
-
+            //gotta work on making it so a user can enter Yard, yards yd Y etc and have them all come through okay
             static string GetUserInput()
             {
-                Console.Write("Enter either yd or m:");
+                Console.Write("Enter either yd or m:"/* ,StringComparison.OrdinalIgnoreCase*/);
 
                 string userInput = Console.ReadLine();
                 return userInput;
@@ -92,21 +96,8 @@ namespace QuiltCalculator
                 {
                     ConvertM();
                 }
-                else
-                {
-                    Console.WriteLine("Your input was neither lb nor kg");
-                }
 
-                //if (ConvertFromYardstoMeters(userInput)) // where the error occurs
-                //{
-                //    var y = new ConvertNumber();
-                //    y.ConvertM();
-                //}
-                //else
-                //{
-                //    var l = new ConvertNumber();
-                //    l.ConvertYD();
-                //}
+
             }
 
             static bool IsValidUserInput(string userInput)
@@ -144,11 +135,11 @@ namespace QuiltCalculator
             {
 
                 //changes for meters
-                Console.Write("Enter the amount of Meters you need to convert to Yards: n/");
+                Console.Write("Enter the amount of Meters you need to convert to Yards:" );
                 double meters = Convert.ToDouble(Console.ReadLine());
 
                 double yards = meters * 1.09361;
-                Console.WriteLine( yards + " Yards is " + meters + " Meters ");
+                Console.WriteLine(meters + " Meters is " + yards + " Yards ");
 
 
 
