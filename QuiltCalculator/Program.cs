@@ -5,14 +5,16 @@ namespace QuiltCalculator
 {
     class Program
     {
-        public const string Yd = "yd"; //User options as constants
+        public const string Yd = "yd"; // User options as constants
         public const string M = "m";
         static void Main(string[] args)
         {
 
+            // Initial welcom screen
             Console.WriteLine("Welcome to the Quilt Calculator! Press enter to proceed.\n");
             Console.ReadKey();
 
+            // User calls the menu 
             bool userInput = true;
             while (userInput)
             {
@@ -33,7 +35,7 @@ namespace QuiltCalculator
             Console.WriteLine("3) Exit");
             Console.Write("\r\nSelect an option: ");
 
-
+            // Switch statement to pick a menu item
 
             switch (Console.ReadLine())
             {
@@ -48,17 +50,12 @@ namespace QuiltCalculator
                 default:
                     return true;
             }
-         
-
         }
-
-       
-       
+    
         private static void FabricMeasurement()
         {
             Console.Clear();
-           Console.Write("Yards or Meters?  "); // request the input from the user
-
+           Console.Write("Yards or Meters?  "); // Request the input from the user
 
             string userInput = GetUserInput();
             try
@@ -116,7 +113,7 @@ namespace QuiltCalculator
             }
             static void ConvertYD()
             {
-                //changes for yards
+                // Sets up the conversion for yard
 
                 Console.Write("Enter a the amount of Yards you need to convert to Meters:");
                 double yards = Convert.ToDouble(Console.ReadLine());
@@ -134,7 +131,7 @@ namespace QuiltCalculator
             static void ConvertM()
             {
 
-                //changes for meters
+                // Sets up the conversion for meters
                 Console.Write("Enter the amount of Meters you need to convert to Yards:" );
                 double meters = Convert.ToDouble(Console.ReadLine());
 
